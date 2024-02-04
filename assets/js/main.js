@@ -18,3 +18,18 @@ function navFun() {
 function removeActive() {
   nav.classList.remove("active");
 }
+
+// Scroll Animation
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "80px",
+  duration: 2000,
+  reset: true,
+});
+sr.reveal(".home-title", {});
+sr.reveal(".home-scroll", { delay: 200 });
+sr.reveal(".home-img", { origin: "right", delay: 300 });
+sr.reveal(".head-section", {});
+sr.reveal(".text", { delay: 200 });
+sr.reveal(".image", { delay: 300 });
+sr.reveal(".item", { interval: 200 });
