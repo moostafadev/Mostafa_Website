@@ -235,8 +235,6 @@ section.skills .content .text {
   flex-direction: column;
   gap: 1rem;
 }
-section.skills .content .items {
-}
 section.skills .content .items > div {
   display: flex;
   gap: 0.75rem;
@@ -299,8 +297,6 @@ section.portfolio .item .link a {
 /* End Portfolio */
 
 /* Start Contact */
-section.contact {
-}
 section.contact .content {
   display: flex;
   flex-direction: column;
