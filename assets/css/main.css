@@ -12,6 +12,7 @@
   /* Fonts Details */
   --body-font: "Montserrat", sans-serif;
   --font-medium: 500;
+  --font-bold: 600;
   /* Fonts Size */
   --big-font-size: 6.25rem;
   --h2-font-size: 1.25rem;
@@ -70,3 +71,51 @@ img {
   height: auto;
   display: block;
 }
+
+/* Start Header */
+header.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  z-index: var(--z-fixed);
+}
+header.header .logo-container a {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-bold);
+  color: var(--white-color);
+}
+header.header .nav-container {
+  position: fixed;
+  top: var(--header-height);
+  right: -100%;
+  width: 80%;
+  height: calc(100% - var(--header-height));
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+header.header .nav-container.active {
+  right: 0;
+}
+header.header .nav-container ul li:not(:last-of-type) {
+  margin-bottom: var(--mb-3);
+}
+header.header .nav-container ul li a {
+  display: block;
+}
+header.header .i-container {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* End Header */
