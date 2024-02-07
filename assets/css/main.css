@@ -6,10 +6,11 @@
   --header-height: 3rem;
   /* Colores */
   --first-color: #9c2b3d;
+  --first-color-alt: #4d161f;
   --white-color: #fafaff;
   --dark-color: #2a3b47;
   --text-color: #333;
-  --footer-color: #b7b7b7;
+  --footer-color: #dfdfdf;
   /* Fonts Details */
   --body-font: "Montserrat", sans-serif;
   --font-medium: 500;
@@ -25,7 +26,7 @@
   --mb-3: 1.5rem;
   --mb-4: 2rem;
   /* Z-Index */
-  --z-fixed: 100;
+  --z-fixed: 1000;
 }
 @media screen and (min-width: 768px) {
   :root {
@@ -149,6 +150,10 @@ header.header .nav-container ul li:not(:last-of-type) {
 header.header .nav-container ul li a {
   display: block;
   font-weight: var(--font-bold);
+  transition: 0.3s;
+}
+header.header .nav-container ul li a:hover {
+  color: var(--first-color-alt);
 }
 header.header .i-container {
   font-size: 2rem;
@@ -172,6 +177,7 @@ section.home h1 {
   font-size: var(--big-font-size);
   line-height: 0.8;
   align-self: center;
+  z-index: 10;
 }
 section.home h1 span {
   text-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
@@ -190,6 +196,32 @@ section.home img {
   right: -78px;
   bottom: -22px;
   width: 300px;
+  z-index: 100;
+}
+section.home .home-scroll {
+  position: relative;
+  animation-name: scroll-home;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  z-index: 10;
+}
+.page {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+.page::before {
+  content: "";
+  background-color: var(--first-color-alt);
+  position: absolute;
+  width: 500%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) skew(0, -10deg);
+  border-radius: 50%;
+  z-index: 1;
+  animation: waving 8s ease-in-out infinite alternate;
 }
 /* End Home */
 
@@ -290,9 +322,9 @@ section.portfolio .item:hover .link {
   height: 100%;
 }
 section.portfolio .item .link a {
-  font-size: var(--h2-font-size);
+  font-size: 1.5rem;
   font-weight: var(--font-bold);
-  color: var(--dark-color);
+  color: var(--white-color);
 }
 /* End Portfolio */
 
@@ -313,7 +345,7 @@ section.contact .content .text p {
 
 /* Start Footer */
 footer.footer {
-  background-color: var(--dark-color);
+  background-color: var(--first-color-alt);
   color: var(--white-color);
 }
 footer.footer > div {
@@ -450,5 +482,25 @@ footer.footer .text .icons a:hover {
   }
   .contact .content {
     grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Animations */
+@keyframes scroll-home {
+  0%,
+  100% {
+    top: 10px;
+  }
+  50% {
+    top: -20px;
+  }
+}
+
+@keyframes waving {
+  from {
+    transform: translateX(-50%) skew(0, 5deg);
+  }
+  to {
+    transform: translateX(-30%) skew(20deg, 0);
   }
 }
