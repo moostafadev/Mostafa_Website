@@ -124,7 +124,7 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 0.5rem;
-  background-color: var(--first-color-alt);
+  background-color: var(--first-color);
   color: #ffffff;
   font-size: 1.5rem;
   display: flex;
@@ -135,7 +135,7 @@ img {
   z-index: var(--z-fixed);
 }
 .btn-top:hover {
-  background-color: var(--first-color);
+  background-color: var(--first-color-alt);
 }
 .btn-top.active {
   right: 1rem;
@@ -201,7 +201,7 @@ header.header .theme {
   width: 40px;
   height: 40px;
   position: fixed;
-  top: calc(var(--header-height) + 0.3rem);
+  top: calc(var(--header-height) + 1.25rem);
   left: 0;
   display: flex;
   align-items: center;
@@ -209,6 +209,7 @@ header.header .theme {
   border-radius: 0 0.5rem 0.5rem 0;
   background-color: var(--first-color-alt);
   font-size: 1.5rem;
+  cursor: pointer;
 }
 /* End Header */
 /* Start Home */
@@ -479,9 +480,6 @@ footer.footer .text .icons a:hover {
     align-items: center;
     justify-content: center;
     flex: 1;
-  }
-  header.header .nav-container ul li a {
-    /* color: var(--white-color); */
   }
   header.header .i-container {
     display: none;
