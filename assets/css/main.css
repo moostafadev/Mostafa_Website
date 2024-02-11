@@ -244,8 +244,8 @@ section.home > div > div a {
 }
 section.home img {
   position: absolute;
-  right: -78px;
-  bottom: -22px;
+  right: -10px;
+  bottom: -20px;
   width: 300px;
   z-index: 100;
 }
@@ -442,9 +442,10 @@ footer.footer .text .icons a:hover {
 /* End Footer */
 
 /* Media Queries */
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 500px) {
   .home img {
-    width: 300px;
+    width: 390px !important;
+    right: 0 !important;
   }
 }
 @media screen and (min-width: 768px) {
@@ -494,7 +495,7 @@ footer.footer .text .icons a:hover {
   }
   .home img {
     width: 470px !important;
-    right: -10% !important;
+    right: 0 !important;
   }
   .skills .content {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -529,7 +530,7 @@ footer.footer .text .icons a:hover {
     margin-right: auto;
   }
   .home img {
-    right: 0 !important;
+    right: calc((100% - 1024px) / 2) !important;
   }
   .contact .content {
     grid-template-columns: repeat(3, 1fr) !important;
@@ -546,7 +547,6 @@ footer.footer .text .icons a:hover {
     top: -20px;
   }
 }
-
 @keyframes waving {
   from {
     transform: translateX(-50%) skew(0, 5deg);
