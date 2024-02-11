@@ -244,7 +244,7 @@ section.home > div > div a {
 }
 section.home img {
   position: absolute;
-  right: -10px;
+  right: calc((100% - 1024px) / 2);
   bottom: -20px;
   width: 300px;
   z-index: 100;
@@ -442,6 +442,11 @@ footer.footer .text .icons a:hover {
 /* End Footer */
 
 /* Media Queries */
+@media screen and (max-width: 500px) {
+  .home img {
+    right: -5px !important;
+  }
+}
 @media screen and (min-width: 500px) {
   .home img {
     width: 390px !important;
@@ -530,7 +535,7 @@ footer.footer .text .icons a:hover {
     margin-right: auto;
   }
   .home img {
-    right: 0;
+    right: calc((100% - 1024px) / 2) !important;
   }
   .contact .content {
     grid-template-columns: repeat(3, 1fr) !important;
