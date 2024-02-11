@@ -530,7 +530,7 @@ footer.footer .text .icons a:hover {
     margin-right: auto;
   }
   .home img {
-    right: calc((100% - 1024px) / 2) !important;
+    right: 0;
   }
   .contact .content {
     grid-template-columns: repeat(3, 1fr) !important;
