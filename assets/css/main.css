@@ -278,6 +278,12 @@ section.home .home-scroll {
 
 /* Start About */
 section.about .content {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 2rem;
+  align-items: center;
+}
+section.about .content > div {
   text-align: center;
 }
 section.about .content h3 {
@@ -305,12 +311,23 @@ section.about .content .links a {
 section.about .content .links a:hover {
   color: var(--first-color);
 }
+.section.about .content .about-img {
+  width: 300px;
+  background-color: var(--first-color);
+  border-radius: 140px;
+  padding: 20px 0 0;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  order: -1;
+}
 /* End About */
 
 /* Start Skills */
 section.skills .content {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  align-items: center;
   gap: 2rem;
 }
 section.skills .content .text {
@@ -337,8 +354,14 @@ section.skills .content .items span:hover {
   color: #ffffff;
   background-color: var(--first-color);
 }
-section.skills .content .image img {
-  border-radius: 0.75rem;
+section.skills .content .image {
+  width: 300px;
+  background-color: var(--first-color);
+  border-radius: 140px;
+  padding: 20px 0 0;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
 }
 /* End Skills */
 
@@ -381,9 +404,18 @@ section.portfolio .item .link a {
 
 /* Start Contact */
 section.contact .content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+section.contact .content .main {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   gap: var(--mb-3);
+}
+section.contact .content .text {
+  text-align: center;
 }
 section.contact .content .text h3 {
   margin-bottom: var(--mb-1);
@@ -391,6 +423,14 @@ section.contact .content .text h3 {
 }
 section.contact .content .text p {
   font-size: var(--font-bold);
+}
+section.contact .content .image-contact {
+  width: 300px;
+  background-color: var(--first-color);
+  border-radius: 140px;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
 }
 /* End Contact */
 
@@ -446,11 +486,36 @@ footer.footer .text .icons a:hover {
   .home img {
     right: -5px !important;
   }
+  .about .content {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .about .content .about-img {
+    width: 100% !important;
+    order: 1 !important;
+  }
+  .skills .content .image {
+    width: 100% !important;
+  }
+  .contact .content .image-contact {
+    width: 100% !important;
+  }
 }
 @media screen and (min-width: 500px) {
   .home img {
     width: 390px !important;
     right: 0 !important;
+  }
+  .about .content {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .about .content .about-img {
+    order: 1 !important;
+  }
+  .skills .content {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .skills .content .image {
+    width: 400px !important;
   }
 }
 @media screen and (min-width: 768px) {
@@ -502,8 +567,20 @@ footer.footer .text .icons a:hover {
     width: 470px !important;
     right: 0 !important;
   }
+  .about .content {
+    grid-template-columns: repeat(2, 2fr) !important;
+  }
+  .about .about-img {
+    width: 400px !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
   .skills .content {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .skills .content .image {
+    margin-left: auto !important;
+    margin-right: 0 !important;
   }
   .skills .content .text {
     gap: 2rem !important;
@@ -512,12 +589,18 @@ footer.footer .text .icons a:hover {
     grid-template-columns: repeat(3, 1fr) !important;
   }
   .contact .content {
-    display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .contact .content .main {
     gap: 2rem !important;
   }
   .contact .content .text {
-    text-align: center;
+    text-align: left !important;
+  }
+  .contact .content .image-contact {
+    width: 400px !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
   }
   .footer > div {
     grid-template-columns: repeat(3, 1fr) !important;
@@ -537,8 +620,12 @@ footer.footer .text .icons a:hover {
   .home img {
     right: calc((100% - 1024px) / 2) !important;
   }
-  .contact .content {
-    grid-template-columns: repeat(3, 1fr) !important;
+  .contact .content .main {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 4rem !important;
+  }
+  .contact .content .image-contact {
+    width: 400px !important;
   }
 }
 
