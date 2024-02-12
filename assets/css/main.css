@@ -466,6 +466,7 @@ footer.footer .text .icons a:hover {
 /* Media Queries */
 @media screen and (max-width: 500px) {
   .home img {
+    bottom: -50px !important;
     right: 50% !important;
     left: 55%;
     transform: translateX(-50%);
