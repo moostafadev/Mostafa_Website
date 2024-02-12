@@ -254,7 +254,7 @@ section.home > div > div a {
 section.home img {
   position: absolute;
   right: calc((100% - 1024px) / 2);
-  bottom: -20px;
+  bottom: -85px;
   width: 300px;
   z-index: 100;
 }
@@ -467,7 +467,7 @@ footer.footer .text .icons a:hover {
 @media screen and (max-width: 500px) {
   .home img {
     right: 50% !important;
-    left: 50%;
+    left: 55%;
     transform: translateX(-50%);
   }
 }
