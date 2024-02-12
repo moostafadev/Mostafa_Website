@@ -466,7 +466,9 @@ footer.footer .text .icons a:hover {
 /* Media Queries */
 @media screen and (max-width: 500px) {
   .home img {
-    right: -5px !important;
+    right: 50% !important;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 @media screen and (min-width: 500px) {
