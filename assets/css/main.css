@@ -170,7 +170,7 @@ img {
   color: #fff;
 }
 .loading span {
-  font-size: 80px;
+  font-size: 45px;
   letter-spacing: 5px;
   line-height: 1;
   text-transform: uppercase;
@@ -510,6 +510,9 @@ footer.footer .text .icons a:hover {
   }
 }
 @media screen and (min-width: 500px) {
+  .loading span {
+    font-size: 80px !important;
+  }
   .home img {
     width: 390px !important;
     right: 0 !important;
