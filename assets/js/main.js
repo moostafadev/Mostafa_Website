@@ -5,12 +5,13 @@ const links = document.querySelectorAll(".nav-container li a");
 const changeTheme = document.querySelector(".change-theme");
 const savedTheme = window.localStorage.getItem("theme");
 const btnTop = document.querySelector(".btn-top");
+const loading = document.querySelector(".c-load");
 
 function navFun(icon, nav) {
   icon.addEventListener("click", () => nav.classList.toggle("active"));
 }
 
-function removeActive(links) {
+function removeActiveFun(links) {
   links.forEach((li) => {
     li.addEventListener("click", () => {
       nav.classList.remove("active");
@@ -31,7 +32,7 @@ function themeFun(savedTheme, changeTheme) {
   });
 }
 
-function btnTopfun(btnTop) {
+function btnTopFun(btnTop) {
   window.addEventListener("scroll", () => {
     if (window.scrollY >= 500) {
       btnTop.classList.add("active");
@@ -41,7 +42,14 @@ function btnTopfun(btnTop) {
   });
 }
 
-btnTopfun(btnTop);
+function loadingFun(loading) {
+  document.addEventListener("DOMContentLoaded", () => {
+    loading.classList.add("disabled");
+  });
+}
+
+btnTopFun(btnTop);
 navFun(icon, nav);
-removeActive(links);
+removeActiveFun(links);
 themeFun(savedTheme, changeTheme);
+loadingFun(loading);
