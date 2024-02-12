@@ -43,7 +43,7 @@ function btnTopFun(btnTop) {
 }
 
 function loadingFun(loading) {
-  document.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("load", () => {
     loading.classList.add("disabled");
   });
 }
