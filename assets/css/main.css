@@ -271,7 +271,7 @@ header.header .nav-container {
   width: 80%;
   height: calc(100% - var(--header-height));
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgb(40 0 0 / 30%);
   backdrop-filter: blur(10px);
   transition: 0.3s;
 }
@@ -282,6 +282,7 @@ header.header .nav-container ul li:not(:last-of-type) {
   margin-bottom: var(--mb-3);
 }
 header.header .nav-container ul li a {
+  position: relative;
   display: block;
   font-weight: var(--font-bold);
   color: #ffffff;
@@ -289,6 +290,19 @@ header.header .nav-container ul li a {
 }
 header.header .nav-container ul li a:hover {
   color: var(--first-color-alt);
+}
+header.header .nav-container ul li a::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 4px;
+  bottom: -10px;
+  left: 0;
+  background-color: white;
+  transition: 0.3s;
+}
+header.header .nav-container ul li a.active::before {
+  width: 100%;
 }
 header.header .i-container {
   font-size: 2rem;

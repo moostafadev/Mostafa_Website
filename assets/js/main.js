@@ -11,6 +11,34 @@ const viewCv = document.querySelector(".view-cv");
 const cvSection = document.querySelector(".cv-section");
 const backBton = document.querySelector(".cv-section .back");
 
+function handleNavbar(links) {
+  function removeActive(links, activeLinkId) {
+    links.forEach((link) => {
+      if (link.id === activeLinkId) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
+  window.addEventListener("scroll", () => {
+    const height = window.scrollY;
+    const sections = [
+      { id: "home-nav", min: 0, max: 700 },
+      { id: "about-nav", min: 700, max: 1400 },
+      { id: "skills-nav", min: 1400, max: 2100 },
+      { id: "portfolio-nav", min: 2100, max: 2800 },
+      { id: "contact-nav", min: 2800, max: Infinity },
+    ];
+    const activeSection = sections.find(
+      (section) => height >= section.min && height < section.max
+    );
+    if (activeSection) {
+      removeActive(links, activeSection.id);
+    }
+  });
+}
+
 function scrollWidth(scroller) {
   window.onscroll = () => {
     let height =
@@ -92,3 +120,4 @@ themeFun(savedTheme, changeTheme);
 loadingFun(loading);
 viewCvFun(viewCv, sections, cvSection);
 backToHome(backBton, sections, cvSection);
+handleNavbar(links);
