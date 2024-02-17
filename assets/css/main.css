@@ -486,16 +486,48 @@ section.skills .content .items span:hover {
 /* End Skills */
 
 /* Start Portfolio */
+section.portfolio .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--mb-3);
+}
+section.portfolio .search ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+section.portfolio .search ul li {
+  padding: 6px 18px;
+  background-color: var(--first-color);
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+section.portfolio .search ul li:hover {
+  background-color: var(--first-color-alt);
+}
+section.portfolio .search ul li.active {
+  background-color: var(--first-color-alt);
+  font-weight: var(--font-bold);
+}
 section.portfolio .content {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 }
 section.portfolio .item {
+  display: block;
   position: relative;
   border-radius: 0.5rem;
   border: 2px solid var(--first-color);
   overflow: hidden;
+}
+section.portfolio .item.disable {
+  display: none;
 }
 section.portfolio .item .link {
   position: absolute;

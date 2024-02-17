@@ -10,6 +10,41 @@ const sections = document.querySelectorAll("section");
 const viewCv = document.querySelector(".view-cv");
 const cvSection = document.querySelector(".cv-section");
 const backBton = document.querySelector(".cv-section .back");
+const searchLies = document.querySelectorAll(".search li");
+
+// function handleSearch(searchLies) {
+//   let search = [];
+//   searchLies.forEach((li) => {
+//     li.addEventListener("click", () => {
+//       if (li.classList.contains("active")) {
+//         li.classList.remove("active");
+//         search = search.filter((s) => s !== li.id);
+//       } else {
+//         li.classList.add("active");
+//         search.push(li.id);
+//       }
+//       for (let i = 0; i < search.length; i++) {
+//         document
+//           .querySelectorAll(`.content .item.${search[i]}`)
+//           .forEach((item) => {
+//             if (!item.classList.contains(li.id)) {
+//               item.classList.add("disable");
+//             } else {
+//               console.log("remove");
+//               item.classList.remove("disable");
+//             }
+//           });
+//       }
+//       console.log(search);
+//       if (search.length === 1) {
+//         const p = document.createElement("p");
+//         p.textContent = "Not Found";
+//         document.querySelector(".portfolio .content").appendChild(p);
+//       }
+//     });
+//   });
+// }
+// handleSearch(searchLies);
 
 function handleNavbar(links) {
   function removeActive(links, activeLinkId) {
