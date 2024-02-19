@@ -8,43 +8,64 @@ const btnTop = document.querySelector(".btn-top");
 const loading = document.querySelector(".c-load");
 const sections = document.querySelectorAll("section");
 const viewCv = document.querySelector(".view-cv");
-const cvSection = document.querySelector(".cv-section");
-const backBton = document.querySelector(".cv-section .back");
+const cvSection = document.querySelector(".cv-page");
+const backBton = document.querySelector(".cv-page .back");
 const searchLies = document.querySelectorAll(".search li");
 
-// function handleSearch(searchLies) {
-//   let search = [];
-//   searchLies.forEach((li) => {
-//     li.addEventListener("click", () => {
-//       if (li.classList.contains("active")) {
-//         li.classList.remove("active");
-//         search = search.filter((s) => s !== li.id);
-//       } else {
-//         li.classList.add("active");
-//         search.push(li.id);
-//       }
-//       for (let i = 0; i < search.length; i++) {
-//         document
-//           .querySelectorAll(`.content .item.${search[i]}`)
-//           .forEach((item) => {
-//             if (!item.classList.contains(li.id)) {
-//               item.classList.add("disable");
-//             } else {
-//               console.log("remove");
-//               item.classList.remove("disable");
-//             }
-//           });
-//       }
-//       console.log(search);
-//       if (search.length === 1) {
-//         const p = document.createElement("p");
-//         p.textContent = "Not Found";
-//         document.querySelector(".portfolio .content").appendChild(p);
-//       }
-//     });
-//   });
-// }
-// handleSearch(searchLies);
+function handleSearch(searchLies) {
+  let search = [];
+  let notFound = false;
+  searchLies.forEach((li) => {
+    li.addEventListener("click", () => {
+      li.classList.toggle("active");
+      if (search.includes(li.id)) {
+        search = search.filter((s) => s !== li.id);
+      } else {
+        search.push(li.id);
+      }
+      const items = Array.from(
+        document.querySelectorAll(".portfolio .content > div")
+      );
+      const filteredItems = items.filter((item) => {
+        return search.length > 0
+          ? search.every((s) => item.classList.contains(s))
+          : (notFound = true);
+      });
+      items.forEach((item) => {
+        if (filteredItems.includes(item)) {
+          item.classList.remove("disable");
+        } else {
+          item.classList.add("disable");
+        }
+      });
+      filteredItems.length < 1 ? (notFound = true) : (notFound = false);
+      if (
+        notFound === true &&
+        document.querySelector(".portfolio .content p") === null
+      ) {
+        const p = document.createElement("p");
+        p.textContent = "Not Found";
+        p.id = "not_found";
+        document.querySelector(".portfolio .content").appendChild(p);
+      } else if (notFound === false) {
+        const notFoundParagraph = document.querySelector(
+          ".portfolio .content p"
+        );
+        notFoundParagraph ? notFoundParagraph.remove() : null;
+      }
+      if (li.id === "all") {
+        search = [];
+        searchLies.forEach((el) => el.classList.remove("active"));
+        document.querySelector(".portfolio .content p")
+          ? document.querySelector(".portfolio .content p").remove()
+          : null;
+        items.forEach((item) => {
+          item.classList.remove("disable");
+        });
+      }
+    });
+  });
+}
 
 function handleNavbar(links) {
   function removeActive(links, activeLinkId) {
@@ -156,3 +177,4 @@ loadingFun(loading);
 viewCvFun(viewCv, sections, cvSection);
 backToHome(backBton, sections, cvSection);
 handleNavbar(links);
+handleSearch(searchLies);
