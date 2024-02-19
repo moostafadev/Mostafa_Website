@@ -502,7 +502,7 @@ section.portfolio .search ul {
 section.portfolio .search ul li {
   padding: 6px 18px;
   background-color: var(--first-color);
-  border-radius: 6px;
+  border-radius: 8px;
   color: white;
   cursor: pointer;
   transition: 0.3s;
