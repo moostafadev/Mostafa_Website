@@ -547,6 +547,7 @@ section.portfolio .item .link {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   gap: 2rem;
   background-color: rgb(195 41 65 / 40%);
   backdrop-filter: blur(10px);
@@ -555,6 +556,15 @@ section.portfolio .item .link {
 }
 section.portfolio .item:hover .link {
   height: 100%;
+}
+section.portfolio .item:hover .link h3 {
+  font-size: 24px;
+}
+section.portfolio .item:hover .link > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 section.portfolio .item .link a {
   font-size: 1.5rem;
