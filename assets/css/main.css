@@ -534,6 +534,7 @@ section.portfolio .item {
   border-radius: 0.5rem;
   border: 2px solid var(--first-color);
   overflow: hidden;
+  transition: 0.3s;
 }
 section.portfolio .item.disable {
   display: none;
@@ -553,6 +554,9 @@ section.portfolio .item .link {
   backdrop-filter: blur(10px);
   overflow: hidden;
   transition: 0.3s;
+}
+section.portfolio .item:hover {
+  transform: scale(1.05);
 }
 section.portfolio .item:hover .link {
   height: 100%;
